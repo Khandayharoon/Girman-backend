@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const { User, connectDB } = require('./DB/db'); 
-
+const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.json());
 app.use(cors())
@@ -54,6 +54,6 @@ app.get('/user/:username', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
